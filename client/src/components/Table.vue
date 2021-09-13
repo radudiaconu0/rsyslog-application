@@ -3,7 +3,7 @@
     <v-data-table
       :headers="headers"
       :items="items"
-      :items-per-page="5"
+      :items-per-page="10"
       class="elevation-1"
       :loading="loading"
     ></v-data-table>
@@ -42,7 +42,7 @@ export default Vue.extend({
     async fetchLogs() {
       try {
         this.loading = true;
-        let { data } = await axios.get("https://localhost:3000/system-logs");
+        let { data } = await axios.get("http://localhost:3000/system-logs");
         this.items = data;
       } catch (e) {
         console.log(e);

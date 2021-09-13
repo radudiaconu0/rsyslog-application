@@ -4,7 +4,7 @@ import fastifyCors from "fastify-cors";
 const server = fastify({ logger: true })
 server.register(fastifyCors)
 // @ts-ignore
- const sequelize = new Sequelize((process.env.DATABASE_URL))
+const sequelize = new Sequelize(('mariadb://rsyslog:password@192.168.0.186:3306/Syslog'))
 
 
 const SysEvent = sequelize.define('SysEvent', {
